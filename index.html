@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Free Code Camp Technical Document Project</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+
+    <div class="row">
+      <div class="column" id="left-column">
+    <nav id="navbar">
+      <header>Docker Docs</header>
+      <ul>
+        <li><a class="nav-link" href="#Docs_@_Docker">Docs @ Docker</a></li>
+        <li>
+          <a class="nav-link" href="#Providing_feedback">Providing feedback</a>
+        </li>
+        <li><a class="nav-link" href="#Contributing">Contributing</a></li>
+        <li>
+          <a class="nav-link" href="#Per-PR_staging_on_GitHub"
+            >Per-PR staging on GitHub</a
+          >
+        </li>
+        <li><a class="nav-link" href="#Staging_locally">Staging locally</a></li>
+        <li><a class="nav-link" href="#Important_files">Important files</a></li>
+        <li>
+          <a class="nav-link" href="#Relative_linking_for_GitHub_viewing"
+            >Relative linking for GitHub viewing</a
+          >
+        </li>
+        <li><a class="nav-link" href="#Style_guide">Style guide</a></li>
+        <li>
+          <a class="nav-link" href="#Copyright_and_license"
+            >Copyright and license</a
+          >
+        </li>
+        <li><a class="nav-link" href="#Reference">Reference</a></li>
+      </ul>
+    </nav>
+  </div>
+
+    <div class="column" id="right-column">
+      <main id="main-doc">
+        <section class="main-section" id="Docs_@_Docker">
+          <header>Docs @ Docker</header>
+          <article>
+            <p>
+              Welcome to the repo for our documentation. This is the source for
+              the URL served at
+              <a href="https://docs.docker.com/">https://docs.docker.com/</a>.
+            </p>
+            <p>
+              Feel free to send us pull requests and file issues. Our docs are
+              completely open source and we deeply appreciate contributions from
+              our community!
+            </p>
+          </article>
+        </section>
+        <section class="main-section" id="Providing_feedback">
+          <header>Providing feedback</header>
+          <article>
+            <p>
+              We really want your feedback, and we've made it easy. You can
+              edit, rate, or file an issue at the bottom of every page on
+              <a href="https://docs.docker.com/">https://docs.docker.com/</a>.
+            </p>
+            <p>
+              <strong
+                >Please only file issues about the documentation in this
+                repository</strong
+              >. One way to think about this is that you should file a bug here
+              if your issue is that you don't see something that should be in
+              the docs, or you see something incorrect or confusing in the docs.
+            </p>
+            <ul>
+              <li>
+                If your problem is a general question about how to configure or
+                use Docker, consider asking a question on
+                <a href="https://forums.docker.com"
+                  >https://forums.docker.com</a
+                >
+                instead.
+              </li>
+              <li>
+                If you have an idea for a new feature or behavior change in a
+                specific aspect of Docker, or have found a bug in part of
+                Docker, please file that issue in the project's code repository.
+              </li>
+            </ul>
+            <code></code>
+          </article>
+        </section>
+        <section class="main-section" id="Contributing">
+          <header>Contributing</header>
+          <article>
+            <p>
+              We value your documentation contributions, and we want to make it
+              as easy as possible to work in this repository. One of the first
+              things to decide is which branch to base your work on. If you get
+              confused, just ask and we will help. If a reviewer realizes you
+              have based your work on the wrong branch, we'll let you know so
+              that you can rebase it.
+            </p>
+            <p>
+              <strong>Note:</strong> To contribute code to Docker projects, see
+              the
+              <a href="https://docs.docker.com/opensource/"
+                >Contribution guidelines</a
+              >.
+            </p>
+            <h3>
+              Files not edited here
+            </h3>
+            <p>
+              Files and directories listed in the <code>path:</code> keys in
+              <code>.NOT_EDITED_HERE.yaml</code> are maintained in other
+              repositories and should not be edited in this one. Pull requests
+              against these files will be rejected. Make your edits to the files
+              in the repository and path in the <code>source:</code> key in the
+              YAML file.
+            </p>
+            <h3>
+              Overall doc improvements
+            </h3>
+            <p>
+              Most commits will be made against the <code>master</code> branch.
+              This include:
+            </p>
+            <ul>
+              <li>
+                Conceptual and task-based information not specific to new
+                features
+              </li>
+              <li>Restructuring / rewriting</li>
+              <li>Doc bug fixing</li>
+              <li>Typos and grammar errors</li>
+            </ul>
+            <p>
+              One quirk of this project is that the<code>master</code> branch is
+              where the live docs are published from, so upcoming features can't
+              be documented there. See Specific new features for a project for
+              how to document upcoming features. These feature branches will be
+              periodically merged with <code>master</code>, so don't worry about
+              fixing typos and documentation bugs there.
+            </p>
+            <p>
+              Do you enjoy creating graphics? Good graphics are key to great
+              documentation, and we especially value contributions in this area.
+            </p>
+            <h3>Specific new features for a project</h3>
+            <p>
+              Our docs cover many projects which release at different times.
+              <strong
+                >If, and only if, your pull request relates to a currently
+                unreleased feature of a project, base your work on that
+                project's <code>vnext</code> branch</strong
+              >. These branches were created by cloning <code>master</code> and
+              then importing a project's <code>master</code> branch's docs into
+              it (at the time of the migration), in a way that preserved the
+              commit history. When a project has a release, its
+              <code>vnext</code> branch will be merged into <code>master</code>
+              and your work will be visible on
+              <a href="https://docs.docker.com/">https://docs.docker.com/</a>.
+            </p>
+            <p>The following <code>vnext</code> branches currently exist:</p>
+            <ul>
+              <li>
+                <strong
+                  ><a
+                    href="https://github.com/docker/docker.github.io/tree/vnext-engine"
+                    >vnext-engine:</a
+                  ></strong
+                >
+                docs for upcoming features in the
+                <a href="https://github.com/moby/moby">docker/docker</a>
+                project
+              </li>
+              <li>
+                <strong
+                  ><a
+                    href="https://github.com/docker/docker.github.io/tree/vnext-compose"
+                    >vnext-compose:</a
+                  ></strong
+                >
+                docs for upcoming features in the
+                <a href="https://github.com/docker/compose/">docker/compose</a>
+                project
+              </li>
+              <li>
+                <strong
+                  ><a
+                    href="https://github.com/docker/docker.github.io/tree/vnext-distribution"
+                    >vnext-distribution:</a
+                  ></strong
+                >
+                docs for upcoming features in the
+                <a
+                  href="https://github.com/docker/docker.github.io/tree/vnext-distribution"
+                  >docker/distribution</a
+                >
+                project
+              </li>
+              <li>
+                <strong
+                  ><a
+                    href="https://github.com/docker/docker.github.io/tree/vnext-opensource"
+                    >vnext-opensource:</a
+                  ></strong
+                >
+                docs for upcoming features in the
+                <a href="https://github.com/docker/opensource/"
+                  >docker/opensource</a
+                >
+                project
+              </li>
+              <li>
+                <strong
+                  ><a
+                    href="https://github.com/docker/docker.github.io/tree/vnext-swarm"
+                    >vnext-swarm:</a
+                  ></strong
+                >
+                docs for upcoming features in the
+                <a href="https://github.com/docker/swarm/">docker/swarm</a>
+                project
+              </li>
+              <li>
+                <strong
+                  ><a
+                    href="https://github.com/docker/docker.github.io/tree/vnext-toolbox"
+                    >vnext-toolbox:</a
+                  ></strong
+                >
+                docs for upcoming features in the
+                <a href="https://github.com/docker/toolbox/">docker/toolbox</a>
+                project
+              </li>
+              <li>
+                <strong
+                  ><a
+                    href="https://github.com/docker/docker.github.io/tree/vnext-kitematic"
+                    >vnext-kitematic:</a
+                  ></strong
+                >
+                docs for upcoming features in the
+                <a href="https://github.com/docker/toolbox/"
+                  >docker/kitematic</a
+                >
+                project
+              </li>
+            </ul>
+          </article>
+        </section>
+        <section class="main-section" id="Per-PR_staging_on_GitHub">
+          <header>Per-PR staging on GitHub</header>
+          <article>
+            <p>
+              For every PR against <code>master</code> and all the long-lived
+              branches, a staged version of the site is built using Netlify. If
+              the site builds, you will see
+              <strong>deploy/netlify — Deploy preview ready</strong>. Otherwise,
+              you will see an error. Click <strong>Details</strong> to review
+              the staged site or the errors that prevented it from building.
+              Review the staged site and amend your commit if necessary.
+              Reviewers will also check the staged site before merging the PR,
+              to protect the integrity of
+              <a href="https://docs.docker.com/">https://docs.docker.com/</a>.
+            </p>
+          </article>
+        </section>
+        <section class="main-section" id="Staging_locally">
+          <header>Staging locally</header>
+          <article>
+            <p>You have three options:</p>
+            <ol>
+              <li>1. Clone this repo and run our staging container:</li>
+              <code
+                >git clone https://github.com/docker/docker.github.io.git</code
+              >
+              <code> cd docker.github.io</code>
+              <code> docker-compose up</code>
+              <p>
+                If you haven't got Docker Compose installed,
+                <a href="https://docs.docker.com/compose/install/"
+                  >follow these installation instructions.</a
+                >
+              </p>
+              <p>
+                The container runs in the background and incrementally rebuilds
+                the site each time a file changes. You can keep your browser
+                open to
+                <a href="http://localhost:4000/">http://localhost:4000/</a> and
+                refresh to see your changes. The container runs in the
+                foreground, but you can use <code>CTRL+C</code> to get the
+                command prompt back. To stop the container, issue the following
+                command:
+              </p>
+              <code>docker-compose down</code>
+              <li>Use Jekyll directly.</li>
+              <ol type="a">
+                <li>Clone this repo by running:</li>
+                <code>
+                  git clone https://github.com/docker/docker.github.io.git</code
+                >
+                <li>
+                  Install Ruby 2.3 or later as described in [Installing Ruby]
+                  <a
+                    href="https://www.ruby-lang.org/en/documentation/installation/"
+                    >(https://www.ruby-lang.org/en/documentation/installation/)</a
+                  >.
+                </li>
+                <li>Install Bundler:</li>
+                <code>gem install bundler</code>
+                <li>
+                  If you use Ubuntu, install packages required for the Nokogiri
+                  HTML parser:
+                </li>
+                <code
+                  >sudo apt-get install ruby-dev zlib1g-dev liblzma-dev</code
+                >
+                <li>Install Jekyll and other required dependencies:</li>
+                <code>bundle install</code>
+                <p>Note: You may have to install some packages manually.</p>
+                <li>Change the directory to <code>docker.github.io.</code></li>
+                <li>
+                  g. Use the <code>jekyll serve</code> command to continuously
+                  build the HTML output.
+                </li>
+                <p>
+                  The <code>jekyll serve</code> process runs in the foreground,
+                  and starts a web server running on
+                  <a href="http://localhost:4000/">http://localhost:4000/</a> by
+                  default. To stop it, use <code>CTRL+C</code>. You can continue
+                  working in a second terminal and Jekyll will rebuild the
+                  website incrementally. Refresh the browser to preview your
+                  changes.
+                </p>
+              </ol>
+              <li>
+                Use Github Pages, with or without a local clone. Fork this repo
+                in GitHub, change your fork's repository name to
+                <code>YOUR_GITHUB_USERNAME.github.io</code>, and make changes to
+                the Markdown files in your <code>master</code> branch.
+              </li>
+            </ol>
+          </article>
+        </section>
+        <section class="main-section" id="Important_files">
+          <header>Important files</header>
+          <article>
+            <ul>
+              <li>
+                <code>/_data/toc.yaml</code> defines the left-hand navigation
+                for the docs
+              </li>
+              <li>
+                <code>/js/menu.js</code> defines most of the docs-specific JS
+                such as TOC generation and menu syncing
+              </li>
+              <li>
+                <code> /css/documentation.css</code> defines the docs-specific
+                style rules
+              </li>
+              <li>
+                <code> /_layouts/docs.html</code> is the HTML template file,
+                which defines the header and footer, and includes all the JS/CSS
+                that serves the docs content
+              </li>
+            </ul>
+          </article>
+        </section>
+        <section class="main-section" id="Relative_linking_for_GitHub_viewing">
+          <header>Relative linking for GitHub viewing</header>
+          <article>
+            <p>
+              Feel free to link to <code>../foo.md</code> so that the docs are
+              readable in GitHub, but keep in mind that Jekyll templating
+              notation <code>{% such as this %}</code> will render in raw text
+              and not be processed. In general it's best to assume the docs are
+              being read directly on
+              <a href="https://docs.docker.com/">https://docs.docker.com/</a>.
+            </p>
+          </article>
+        </section>
+        <section class="main-section" id="Style_guide">
+          <header>Style guide</header>
+          <article>
+            <p>
+              If you have questions about how to write for Docker's
+              documentation, please see the style guide. The
+              <a href="https://docs.docker.com/opensource/">style guide</a>
+              provides guidance about grammar, syntax, formatting, styling,
+              language, or tone. If something isn't clear in the guide, please
+              submit an issue to let us know or submit a pull request to help us
+              improve it.
+            </p>
+            <h3>Per-page front-matter</h3>
+            <p>
+              The front-matter of a given page is in a section at the top of the
+              Markdown file that starts and ends with three hyphens. It includes
+              YAML content. The following keys are supported. The title,
+              description, and keywords are required.
+            </p>
+            <table>
+              <tr>
+                <th>Key</th>
+                <th>Required</th>
+                <th>Description</th>
+              </tr>
+              <tr>
+                <td>title</td>
+                <td>yes</td>
+                <td>
+                  The page title. This is added to the HTML output as a h1 level
+                  header.
+                </td>
+              </tr>
+              <tr>
+                <td>description</td>
+                <td>yes</td>
+                <td>
+                  A sentence that describes the page contents. This is added to
+                  the HTML metadata.
+                </td>
+              </tr>
+              <tr>
+                <td>keywords</td>
+                <td>yes</td>
+                <td>
+                  A comma-separated list of keywords. These are added to the
+                  HTML metadata.
+                </td>
+              </tr>
+              <tr>
+                <td>redirect_from</td>
+                <td>no</td>
+                <td>
+                  A YAML list of pages which should redirect to THIS page. At
+                  build time, each page listed here is created as a HTML stub
+                  containing a 302 redirect to this page.
+                </td>
+              </tr>
+              <tr>
+                <td>notoc</td>
+                <td>no</td>
+                <td>
+                  Either <code>true</code> or <code>false</code>. If
+                  <code>true</code>, no in-page TOC is generated for the HTML
+                  output of this page. Defaults to <code>false</code>.
+                  Appropriate for some landing pages that have no in-page
+                  headings.
+                </td>
+              </tr>
+              <tr>
+                <td>toc_min</td>
+                <td>no</td>
+                <td>
+                  Ignored if <code>notoc</code> is set to <code>true</code>. The
+                  minimum heading level included in the in-page TOC. Defaults to
+                  <code>2</code>, to show <code>h2</code> headings as the
+                  minimum.
+                </td>
+              </tr>
+              <tr>
+                <td>toc_max</td>
+                <td>no</td>
+                <td>
+                  Ignored if <code>notoc</code> is set to <code>false</code>.
+                  The maximum heading level included in the in-page TOC.
+                  Defaults to <code>3</code>, to show <code>h3</code> headings.
+                  Set to the same as <code>toc_min</code> to only show
+                  <code>toc_min</code> level of headings.
+                </td>
+              </tr>
+              <tr>
+                <td>tree</td>
+                <td>no</td>
+                <td>
+                  Either <code>true</code> or <code>false</code>. Set to
+                  <code>false</code> to disable the left-hand site-wide
+                  navigation for this page. Appropriate for some pages like the
+                  search page or the 404 page.
+                </td>
+              </tr>
+              <tr>
+                <td>no_ratings</td>
+                <td>no</td>
+                <td>
+                  Either <code>true</code> or <code>false</code>. Set to
+                  <code>true</code> to disable the page-ratings applet for this
+                  page. Defaults to <code>false</code>.
+                </td>
+              </tr>
+            </table>
+
+            <p>
+              The following is an example of valid (but contrived) page
+              metadata. The order of the metadata elements in the front-matter
+              is not important.
+            </p>
+            <code
+              >--- description: Instructions for installing Docker on Ubuntu
+              keywords: requirements, apt, installation, ubuntu, install,
+              uninstall, upgrade, update redirect_from: -
+              /engine/installation/ubuntulinux/ - /installation/ubuntulinux/ -
+              /engine/installation/linux/ubuntulinux/ title: Get Docker for
+              Ubuntu toc_min: 1 toc_max: 6 tree: false no_ratings: true
+              ---</code
+            >
+            <h3>Creating tabs</h3>
+            <p>
+              The use of tabs, as on pages like
+              <a href="https://docs.docker.com/engine/api/"
+                >https://docs.docker.com/engine/api/</a
+              >, requires the use of HTML. The tabs use Bootstrap CSS/JS, so
+              refer to those docs for more advanced usage. For a basic
+              horizontal tab set, copy/paste starting from this code and
+              implement from there. Keep an eye on those
+              <code>href="#id" and id="id"</code> references as you rename, add,
+              and remove tabs.
+            </p>
+          </article>
+        </section>
+        <section class="main-section" id="Copyright_and_license">
+          <header>Copyright and license</header>
+          <article>
+            <p>
+              Code and documentation copyright 2017 Docker, inc, released under
+              the Apache 2.0 license.
+            </p>
+          </article>
+        </section>
+        <section class="main-section" id="Reference">
+          <header>Reference</header>
+          <article>
+            <ul>
+              <li>
+                All the documentation in this page is taken from
+                <a href="https://hub.docker.com/_/docker-docs" target="_blank"
+                  >Docker Hub</a
+                >
+              </li>
+            </ul>
+          </article>
+        </section>
+      </main>
+    </div>
+    </div>
+  </body>
+</html>
